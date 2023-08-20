@@ -1,9 +1,9 @@
 init:
 	git init
 	npm init -y
-	npm install typescript --save-dev 
-	npm install nodemon ts-node-dev  --save-dev
-	npm install rimraf --save-dev
+	npm install --save-dev typescript  
+	npm install --save-dev nodemon ts-node-dev
+	npm install --save-dev rimraf 
 
 clean:
 	rm -rf dist
@@ -14,14 +14,14 @@ install:
 	npm install
 
 build: 
-	npm run build
+	@npm run build
 
 
 rebuild: clean install build
 	 @echo rebuild
 
 run: 
-	npm run start	
+	@npm run start	
 
 dev:
-	npm run dev	
+	  @npm run dev	
