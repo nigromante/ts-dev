@@ -1,0 +1,64 @@
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+
+    const dom = new JSDOM(
+        `<p>Hello
+          <img id='testControl' src="foo.jpg">
+        </p>`,
+        { includeNodeLocations: true }
+      );
+     
+    //   (function(window){
+    //     function myLibrary(){
+    //       var _myLibraryObject = {};
+
+    //       var settings = {
+    //         volume:100,
+    //         mute:false
+    //       };
+
+    //       _myLibraryObject.haveSound = function(){
+    //         return settings.mute;
+    //         };
+
+
+    //       return _myLibraryObject;
+    //     }
+      
+    //     if(typeof(window.myWindowGlobalLibraryName) === 'undefined'){
+    //       window.myWindowGlobalLibraryName = myLibrary();
+    //     }
+    //   })(dom.window); 
+      
+
+
+    (function( document ) {
+
+        class Tema {
+
+            constructor( id : string ) {
+                const elem = document.querySelector( id );
+                if( ! elem ) return ;
+                console.info("add listener"); 
+                elem.addEventListener('click', (event : any) => {
+                    event.preventDefault;
+                    this.evento(event.target);
+                });
+            }
+
+            evento( target :any ) {
+                console.log( "procesa evento **** " , target);
+            }
+
+        }
+
+
+        console.log( "starting ... ****  " );
+
+        new Tema( '#testControl' );
+
+
+
+    })( dom.window.document );
+    
+    
